@@ -35,7 +35,8 @@ export default function Login() {
 				navigate(`/${Routes.DASHBOARD}`, { replace: true })
 			}
 		}
-		catch {
+		catch (err) {
+			console.log(err)
 			toast.error('Usuario o contraseña incorrectos')
 		}
 	}
