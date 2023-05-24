@@ -7,7 +7,7 @@ export const fetchOrders = createAsyncThunk('order/fetchOrders', async () => {
 	const response = await new Server().get<TOrder[]>('/orders')
 	return response.orders
 }, {
-	condition: (id, { getState }) => {
+	condition: (_id, { getState }) => {
 		if ((getState() as RootState).orders.length > 0) {
 			return false
 		}

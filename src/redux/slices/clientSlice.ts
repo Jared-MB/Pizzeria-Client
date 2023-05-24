@@ -1,12 +1,12 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { EmptyClient, TClient } from 'src/models'
+import { TClient } from 'src/models'
 import { Server } from 'src/services'
 
 export const fetchClients = createAsyncThunk('clients/fetchClients', async () => {
 	const response = await new Server().get<TClient[]>('/clients')
 	return response.clients
 }, {
-	condition: (id, { getState }) => {
+	condition: (_id, { getState }) => {
 		if ((getState() as TClient[]).length > 0) {
 			return false
 		}

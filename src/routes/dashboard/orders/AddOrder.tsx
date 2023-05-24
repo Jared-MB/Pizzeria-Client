@@ -1,4 +1,4 @@
-import { TOrder, TProduct, TProductWithQuantity } from 'src/models'
+import { TOrder, TProductWithQuantity } from 'src/models'
 import { Back } from '../components'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'

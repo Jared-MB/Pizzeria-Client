@@ -7,7 +7,7 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
 	const response = await new Server().get<TProduct[]>('/products')
 	return response.products
 }, {
-	condition: (id, { getState }) => {
+	condition: (_id, { getState }) => {
 		if ((getState() as RootState).products.length > 0) {
 			return false
 		}
